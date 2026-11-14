@@ -1,0 +1,4 @@
+const toggle=document.querySelector('.theme-toggle'); const menu=document.querySelector('.menu-toggle'); const nav=document.querySelector('#site-nav');
+const saved=localStorage.getItem('portfolio-theme'); if(saved==='dark'){document.body.classList.add('dark');toggle.setAttribute('aria-label','Switch to light mode')}
+toggle.addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');localStorage.setItem('portfolio-theme',dark?'dark':'light');toggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode')});
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open)}); nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
